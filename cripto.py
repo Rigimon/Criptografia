@@ -61,7 +61,8 @@ numero = ""
 for c in num:
   if c == "+" or c == "-":
     numero += ""
-  else numero += " " + c
+  else:
+    numero += " " + c
 numero = numero.split()
 
 # Montar a Estrutura do Texto a ser Descriptografado
