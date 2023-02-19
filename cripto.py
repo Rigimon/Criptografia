@@ -7,7 +7,7 @@ def menos(letra, numero, alfabeto):
         cont = 26 + (cont - numero)
         return alfabeto[cont]
       else:
-        return alfabto[cont - numero]
+        return alfabeto[cont - numero]
     cont += 1
 
 def mais(letra, numero, alfabeto):
