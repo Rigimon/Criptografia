@@ -1,32 +1,24 @@
 def menos(letra, numero, alfabeto):
     cont = 0
     numero = int(numero)
-    #print(letra)
     for c in alfabeto:
         if letra == c:
-            #print(letra)
             if cont - numero < 0:
                 cont = 26 + (cont - numero)
-                #print(alfabeto[cont])
                 return alfabeto[cont]
             else:
-                #print(alfabeto[cont - numero])
                 return alfabeto[cont - numero]
         cont += 1
 
 def mais(letra, numero, alfabeto):
     cont = 0
     numero = int(numero)
-    #print(letra)
     for c in alfabeto:
         if letra == c:
-            #print(letra)
             if cont + numero > 25:
                 cont = (cont + numero) - 26
-                #print(alfabeto[cont])
                 return alfabeto[cont]
             else:
-                #print(alfabeto[cont + numero])
                 return alfabeto[cont + numero]
         cont += 1
 
@@ -89,24 +81,18 @@ for i in palavra:
     if i != " ":
         texto += i
 texto = list(texto)
-print(texto)
     
 # Descriptografar o Texto
 for c in numero:
     if "+" in c:
         num = list(c)
-        print(num)
         pa = mais(texto[cont], num[1], alfabeto)
-        print(pa)
         frase += pa
     if "-" in c:
         num = list(c)
-        print(num)
         pa = menos(texto[cont], num[1], alfabeto)
-        print(pa)
         frase += pa
     cont += 1
-    print(cont)
   
 # Inserir Espaços
 frase = list(frase)
