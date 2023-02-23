@@ -1,26 +1,34 @@
 def menos(letra, numero, alfabeto):
-  cont = 0
-  numero = int(numero)
-  for c in alfabeto:
-    if letra == c:
-      if cont - numero < 0:
-        cont = 26 + (cont - numero)
-        return alfabeto[cont]
-      else:
-        return alfabeto[cont - numero]
-    cont += 1
+    cont = 0
+    numero = int(numero)
+    #print(letra)
+    for c in alfabeto:
+        if letra == c:
+            #print(letra)
+            if cont - numero < 0:
+                cont = 26 + (cont - numero)
+                #print(alfabeto[cont])
+                return alfabeto[cont]
+            else:
+                #print(alfabeto[cont - numero])
+                return alfabeto[cont - numero]
+        cont += 1
 
 def mais(letra, numero, alfabeto):
-  cont = 0
-  numero = int(numero)
-  for c in alfabeto:
-    if letra == c:
-      if cont + numero > 25:
-        cont = (cont + numero) - 26
-        return alfabeto[cont]
-      else:
-        return alfabeto[cont + numero]
-    cont += 1
+    cont = 0
+    numero = int(numero)
+    #print(letra)
+    for c in alfabeto:
+        if letra == c:
+            #print(letra)
+            if cont + numero > 25:
+                cont = (cont + numero) - 26
+                #print(alfabeto[cont])
+                return alfabeto[cont]
+            else:
+                #print(alfabeto[cont + numero])
+                return alfabeto[cont + numero]
+        cont += 1
 
 # Variaveis Inicializadas
 num = ""
@@ -44,70 +52,77 @@ numero = list(input())
 
 # Montar a Estrutura da soma e subtração da criptografia
 for c in numero:
-  if "-" in c or "+" in c:
-    simbolo = c
-    resto = simbolo
-  else:
-    simbolo = ""
+    if "-" in c or "+" in c:
+        simbolo = c
+        resto = simbolo
+    else:
+        simbolo = ""
     
-  if simbolo == "-" or simbolo == "+":
-    num += " " + c
-  else:
-    num += " " + resto + c + " "
+    if simbolo == "-" or simbolo == "+":
+        num += " " + c
+    else:
+        num += " " + resto + c + " "
     
 num = num.split()
 numero = ""
 
 for c in num:
-  if c == "+" or c == "-":
-    numero += ""
-  else:
-    numero += " " + c
+    if c == "+" or c == "-":
+        numero += ""
+    else:
+        numero += " " + c
 numero = numero.split()
 
 # Montar a Estrutura do Texto a ser Descriptografado
 for i in texto:
-  if i == "w":
-    position.append(cont)
-    palavra += " "
-  else:
-    palavra += i
-  cont += 1
+    if i == "w":
+        position.append(cont)
+        palavra += " "
+    else:
+        palavra += i
+    cont += 1
 
 palavra = palavra.split()
 texto = ""
 cont = 0
 for i in palavra:
-  if i != " ":
-    texto += i
+    if i != " ":
+        texto += i
+texto = list(texto)
+print(texto)
     
 # Descriptografar o Texto
 for c in numero:
-  if "+" in c:
-    num = list(c)
-    pa = mais(texto[cont], num[1], alfabeto)
-    frase += pa
-  if "-" in c:
-    num = list(c)
-    pa = menos(texto[cont], num[1], alfabeto)
-    frase += pa
-  cont += 1
+    if "+" in c:
+        num = list(c)
+        print(num)
+        pa = mais(texto[cont], num[1], alfabeto)
+        print(pa)
+        frase += pa
+    if "-" in c:
+        num = list(c)
+        print(num)
+        pa = menos(texto[cont], num[1], alfabeto)
+        print(pa)
+        frase += pa
+    cont += 1
+    print(cont)
   
 # Inserir Espaços
 frase = list(frase)
 for i in range(0, pal):
-  frase.insert(position[i]," ")
+    frase.insert(position[i]," ")
 frases = ""
 for i in frase:
-  frases += i
+    frases += i
 
 # Resultado
 print(frases)
 
 # Testes
 
-# dqnptacwulwpaq
+# dqnptacwulwupaq
 # -122136+201-31+1-2
 
-# vdwgegewecahiafvmfuv
+# vdwgzgzwzcahlafwmfuv
 # -3+159013-2+1-390+99989
