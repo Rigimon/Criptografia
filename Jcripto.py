@@ -1,3 +1,5 @@
+# Junção dos Codigos Anteriores Como uma Biblioteca
+
 # Codigo que Criptografa
 def cripto(text):
     from random import randrange
