@@ -1,10 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-def cripto(te):
+# Codigo que Criptografa
+def cripto(text):
     from random import randrange
 
     def mais(alfabeto,letra,num):
@@ -40,7 +35,7 @@ def cripto(te):
 
 
     # Entrada de Dados
-    texto = te
+    texto = text
     alfabeto = ["a","b","c","d","e","f",
                 "g","h","i","j","k","l",
                 "m","n","o","p","q","r",
@@ -97,11 +92,8 @@ def cripto(te):
     # Resultados
     return palavra,numero
 
-
-# In[2]:
-
-
-def descripto(te,pa):
+# Codigo que Descriptografa
+def descripto(text,nu):
     def menos(letra, numero, alfabeto):
         cont = 0
         numero = int(numero)
@@ -140,11 +132,11 @@ def descripto(te,pa):
                 "y","z"]
 
     # Pedir Valores e Separa-los em Vetores
-    pal = te
+    pal = text
     texto = list(pal)
     pal = pal.count("w")
     position = []
-    numero = list(pa)
+    numero = list(nu)
 
     # Montar a Estrutura da soma e subtração da criptografia
     for c in numero:
